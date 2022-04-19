@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tool.Controller">
+   <children>
+      <SplitPane dividerPositions="0.31605351170568563" layoutX="212.0" layoutY="75.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="139.0" prefWidth="186.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="100.0" layoutY="6.0" prefHeight="398.0" prefWidth="186.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fx:id="photoImageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="343.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" layoutX="206.0" prefHeight="400.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="175.0" text="1. Please upload photo">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#uploadButtonPushed" prefHeight="30.0" prefWidth="175.0" text="Upload from my computer" />
+                        <Label fx:id="selectOutputLabel" prefHeight="30.0" prefWidth="175.0" text="2. Select output format">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="selectFormatBox" onMouseReleased="#selectFormatBoxSelected" prefHeight="30.0" prefWidth="175.0" />
+                        <Button fx:id="convertButton" mnemonicParsing="false" onAction="#convertButtonPushed" prefHeight="30.0" prefWidth="100.0" text="convert" />
+                        <Label prefHeight="30.0" prefWidth="175.0" text="3. Download / restart">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="selectDirectoryButton" mnemonicParsing="false" onAction="#selectDirectoryButtonPushed" prefHeight="30.0" prefWidth="175.0" text="Select a directory to save" />
+                        <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#downloadButtonPushed" prefHeight="30.0" prefWidth="100.0" text="download" />
+                        <Button fx:id="restartButton" mnemonicParsing="false" onAction="#restartButtonPushed" prefHeight="30.0" prefWidth="100.0" text="restart" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="25.0" prefHeight="400.0" prefWidth="175.0">
+                     <children>
+                        <Label fx:id="imageInfoLabel" prefHeight="30.0" prefWidth="175.0" text="Image Info">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="99.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="101.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="75.0" text="height:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="heightLabel" prefHeight="30.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                              <Label prefHeight="30.0" prefWidth="75.0" text="width:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="widthLabel" prefHeight="30.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label prefHeight="30.0" prefWidth="75.0" text="camera:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cameraLabel" prefHeight="30.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label prefHeight="30.0" prefWidth="75.0" text="date:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="dateLabel" prefHeight="30.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="infoReminderLabel" prefHeight="30.0" prefWidth="175.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
